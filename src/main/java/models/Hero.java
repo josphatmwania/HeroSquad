@@ -26,7 +26,7 @@ public class Hero {
         } else {
             heroRegistry.add(this);
             this.heroID = heroRegistry.size();
-            this.squadAlliance = "";
+            this.squadFighters = "";
         }
     }
 
@@ -36,11 +36,42 @@ public class Hero {
         this.power;
     }
 
-    // defining weaksness
+    // defining weakness
 
     public void setWeakness(String weakness) {
         this.weakness;
+    }
+
+    public  void setSquadFighters(String squadFighters) {
+        this.setSquadFighters = squadFighters;
+    }
+
+    public String getSquadFighters() {
+        return getSquadFighters;
 
     }
 
+    public  String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+    public  String getPower() {
+        return power;
+
+    }
+
+    public  String getWeakness() {
+        return weakness;
+
+    }
+    public  int getHeroID() {
+        return heroID;
+
+    }
+    public  static  List<Hero> getHeroRegistry() {
+        return heroRegistry;
+    }
 }
