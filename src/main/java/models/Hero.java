@@ -11,7 +11,8 @@ public class Hero {
     private String weakness;
     private  static List<Hero> heroRegistry = new ArrayList<>();
     private  int heroID;
-    private static boolean duplicate = false;
+    private String squadFighters;
+//    private static boolean duplicate = false;
 
 
     public Hero(String name, int age, String power, String weakness) {
@@ -19,35 +20,35 @@ public class Hero {
         this.age = age;
         this.power = power.trim();
         this.weakness = weakness.trim();
-        findDuplicateHero(this);
 
-        if (duplicate) {
-            System.out.println("This is a Duplicate Hero!!");
-        } else {
-            heroRegistry.add(this);
-            this.heroID = heroRegistry.size();
-            this.squadFighters = "";
-        }
+//        findDuplicateHero(this);
+//        if (duplicate) {
+//            System.out.println("This is a Duplicate Hero!!");
+//        } else {
+//            heroRegistry.add(this);
+//            this.heroID = heroRegistry.size();
+//            this.squadFighters = "";
+//        }
     }
 
-    // defining hero power
+ // defining hero power
 
     public  void setPower(String power) {
-        this.power;
+        this.power = power;
     }
 
     // defining weakness
 
     public void setWeakness(String weakness) {
-        this.weakness;
+        this.weakness = weakness;
     }
 
     public  void setSquadFighters(String squadFighters) {
-        this.setSquadFighters = squadFighters;
+        this.squadFighters = squadFighters;
     }
 
     public String getSquadFighters() {
-        return getSquadFighters;
+        return squadFighters;
 
     }
 
