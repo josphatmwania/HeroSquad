@@ -13,8 +13,21 @@ public class Hero {
     private  int heroID;
     private static boolean duplicate = false;
 
+
     public Hero(String name, int age, String power, String weakness) {
         this.name = name.trim();
+        this.age = age;
+        this.power = power.trim();
+        this.weakness = weakness.trim();
+        findDuplicateHero(this);
+
+        if (duplicate) {
+            System.out.println("This is a Duplicate Hero!!");
+        } else {
+            heroRegistry.add(this);
+            this.heroID = heroRegistry.size();
+            this.squadAlliance = "";
+        }
     }
 
 }
