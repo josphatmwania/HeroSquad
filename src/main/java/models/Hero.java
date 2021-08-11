@@ -30,4 +30,17 @@ public class Hero {
         }
     }
 
+    // defining hero power
+
+    public  void setPower(String power) {
+        this.power;
+    }
+
+    // defining weaksness
+
+    public void setWeakness(String weakness) {
+        this.weakness;
+
+    }
+
 }
