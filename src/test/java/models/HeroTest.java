@@ -7,7 +7,6 @@ import org.junit.Assert;
 import static org.junit.Assert.*;
 
 
-@SuppressWarnings("ALL")
 public class HeroTest {
 
     @Before
@@ -27,6 +26,12 @@ public class HeroTest {
     public  void heroInstacePerfect() {
         Hero newHero = setUpNewHero();
         assertTrue(newHero instanceof Hero);
+    }
+
+    @Test
+    public  void  getHeroName_true() {
+        Hero newHero = setUpNewHero();
+        assertTrue(newHero.getName() instanceof String);
     }
 
 }

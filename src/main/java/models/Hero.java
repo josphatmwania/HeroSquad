@@ -20,15 +20,6 @@ public class Hero {
         this.age = age;
         this.power = power.trim();
         this.weakness = weakness.trim();
-
-//        findDuplicateHero(this);
-//        if (duplicate) {
-//            System.out.println("This is a Duplicate Hero!!");
-//        } else {
-//            heroRegistry.add(this);
-//            this.heroID = heroRegistry.size();
-//            this.squadFighters = "";
-//        }
     }
 
  // defining hero power
