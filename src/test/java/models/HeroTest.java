@@ -53,10 +53,9 @@ public class HeroTest {
         assertTrue(newHero.getWeakness() instanceof String);
     }
 
-    @Test
-    public  void get_Hero_ID_true(){
-        Hero newHero = setUpNewHero();
-        assertEquals();
+    @After
+    public void tearDown() throws  Exception {
+        Hero.clearHeroRegistry();
     }
 
 

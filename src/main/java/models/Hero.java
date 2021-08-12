@@ -22,7 +22,12 @@ public class Hero {
         this.weakness = weakness.trim();
     }
 
- // defining hero power
+    public static void clearHeroRegistry() {
+        heroRegistry.clear();
+
+    }
+
+    // defining hero power
 
     public  void setPower(String power) {
         this.power = power;
@@ -63,7 +68,37 @@ public class Hero {
         return heroID;
 
     }
+    public  static  Hero findHero(int searchID){
+        return heroRegistry.get(searchID -1);
+    }
     public  static  List<Hero> getHeroRegistry() {
+
         return heroRegistry;
     }
+
+// Updating the Squad
+
+    public void updateSquad(String newSquad){
+        this.squadFighters = newSquad;
+    }
+
+    public void updateName(String newName) {
+        this.name = newName;
+    }
+
+    public void updateWeakness(String newWeakness) {
+        this.weakness = newWeakness;
+    }
+
+    public void updateAge(int newAge) {
+        this.age = newAge;
+    }
+    public void updatePower(String newPower) {
+        this.power = newPower;
+    }
+
+
+
+
+
 }
