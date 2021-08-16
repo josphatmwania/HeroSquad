@@ -1,11 +1,11 @@
-#Hero Squad
+# Hero Squad
 Done By Josphat Mwania
 
-#Description
+# Description
 
-#Hero & Squad Properties
+# Hero & Squad Properties
 
-#Hero properties 	Squad properties
+# Hero properties 	Squad properties
 Name	             Name
 Age	                 Cause
 Strength	        Hero Member(s)
