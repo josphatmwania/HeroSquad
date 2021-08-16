@@ -1,64 +1,83 @@
 package models;
 
-import org.junit.Test;
-import org.junit.Before;
 import org.junit.After;
-import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
-
+@SuppressWarnings("ALL")
 public class HeroTest {
 
     @Before
-    public  void setUp() throws Exception {
-
+    public void setUp() throws Exception {
     }
 
-    private Hero setUpNewHero(){
-        return new Hero("Bazu", 15, "Thriller", "Scary");
+    private Hero setupNewHero(){
+        return new Hero ("Batman",45,"Money","Loneliness");
     }
 
-    private  Hero setUpNewHero2(){
-        return new Hero("Batman", 35, "Monster", "Beast");
+    private Hero setupHero2() {
+        return new Hero("Superman", 180, "Almost everything", "Kryptonite");
     }
 
     @Test
-    public  void heroInstacePerfect() {
-        Hero newHero = setUpNewHero();
+    public void heroInstantiatesCorrectly() {
+        Hero newHero = setupNewHero();
         assertTrue(newHero instanceof Hero);
     }
-// Name test
-    @Test
-    public  void  getHeroName_true() {
-        Hero newHero = setUpNewHero();
-        assertTrue(newHero.getName() instanceof String);
-    }
-// Test for Power
-    @Test
-    public void get_Hero_Power_true(){
-        Hero newHero = setUpNewHero();
-        assertTrue(newHero.getPower() instanceof String);
-    }
-// Test method for age
 
     @Test
-    public  void get_Hero_Age_true() {
-        Hero newHero = setUpNewHero();
-        assertEquals(15, newHero.getAge());
+    public void getHeroName_true() {
+        Hero newHero = setupNewHero();
+        assertTrue(newHero.getName() instanceof String);
     }
-// Test method for Hero Weakness
+
     @Test
-    public void get_Hero_Weaksness_true() {
-        Hero newHero = setUpNewHero();
+    public void getHeroAge_int() {
+        Hero newHero = setupNewHero();
+        assertEquals(45, newHero.getAge());
+    }
+
+    @Test
+    public void getHeroPower_true() {
+        Hero newHero = setupNewHero();
+        assertTrue(newHero.getPower() instanceof String);
+    }
+
+    @Test
+    public void getHeroWeakness_true() {
+        Hero newHero = setupNewHero();
         assertTrue(newHero.getWeakness() instanceof String);
     }
 
-    @After
-    public void tearDown() throws  Exception {
-        Hero.clearHeroRegistry();
+    @Test
+    public void getHeroList_storeTwoHeroes_true() {
+        Hero newHero = setupNewHero();
+        Hero anotherNewHero = setupHero2();
+        assertTrue(Hero.getHeroRegistry().contains(newHero));
+        assertTrue(Hero.getHeroRegistry().contains(anotherNewHero));
     }
 
+    @Test
+    public void findHero_searchForHeroById_String() {
+        Hero newHero = setupNewHero();
+        Hero anotherNewHero = setupHero2();
+        assertEquals("Batman", Hero.findHero(newHero.getHeroID()).getName());
+    }
 
+    @Test
+    public void deleteSingleHero() {
+        Hero newHero = setupNewHero();
+        Hero anotherNewHero = setupHero2();
+        Hero thirdHero = new Hero("Iron Man", 35, "Money", "Ego");
+        Hero.deleteHero(anotherNewHero.getHeroID());
+        assertFalse(Hero.getHeroRegistry().contains(anotherNewHero));
+        assertEquals(3, Hero.getHeroRegistry().get(1).getHeroID());
+    }
 
-
+    @After
+    public void tearDown() throws Exception {
+        Hero.clearHeroRegistry();
+    }
 }
