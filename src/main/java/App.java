@@ -237,7 +237,12 @@ public class App {
             return new ModelAndView(model, "update-form.hbs");
         }, new HandlebarsTemplateEngine());
 
-
+        //get: Route to the frequently asked questions template
+        get("/faqs", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("uniqueId", request.session().attribute("uniqueId"));
+            return new ModelAndView(model, "faqs.hbs");
+        }, new HandlebarsTemplateEngine());
 
     }
 }
