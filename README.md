@@ -6,9 +6,9 @@ Done By Josphat Mwania
 # Hero & Squad Properties
 
 # Hero properties 	Squad properties
-* Name	             * Name
-* Age	             * Cause
-* Strength	        * Hero Member(s)
+* Name	              Name
+* Age	              Cause
+* Strength	          Hero Member(s)
 * Weakness	
 * Affiliated Squad	
 
