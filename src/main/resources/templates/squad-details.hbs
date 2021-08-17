@@ -1,0 +1,25 @@
+{{#partial "navbar"}}
+    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="/heroes/new">Recruit a New Hero</a></li>
+    <li class="nav-item"><a class="nav-link" href="/squads/new">Create a New Squad</a></li>
+    <li class="nav-item"><a class="nav-link" href="/heroes">All Heroes & Squads</a></li>
+    <li class="nav-item"><a class="nav-link" href="/faqs">FAQs</a></li>
+{{/partial}}
+
+
+{{#partial "content"}}
+    <h3 class="text-center"><u>{{squad.name}}</u></h3>
+    <p><b>Cause:</b>  {{squad.cause}}</p>
+    <ul>
+        {{#each squad.members}}
+            <li>{{name}}</li>
+        {{/each}}
+    </ul>
+    {{#if squad.squadFull}}
+        <p class="text-center">Squad Full</p>
+    {{else}}
+        <a class="btn btn-outline-primary" href="/squads/{{squad.squadId}}/update">Recruit</a>
+    {{/if}}
+    <a class="btn btn-outline-danger" href="/squads/{{squad.squadId}}/remove">Remove Members</a>
+{{/partial}}
+{{> layout.hbs}}
