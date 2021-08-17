@@ -1,0 +1,32 @@
+{{#partial "navbar"}}
+    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="/heroes/new">Recruit a New Hero</a></li>
+    <li class="nav-item"><a class="nav-link" href="/squads/new">Create a New Squad</a></li>
+    <li class="nav-item"><a class="nav-link" href="/heroes">All Heroes & Squads</a></li>
+    <li class="nav-item active"><a class="nav-link" href="/faqs">FAQs</a></li>
+{{/partial}}
+
+{{#partial "content"}}
+    <h2 class="text-center"><u>Frequently Asked Questions</u></h2>
+    <h6 class="text-center">Neil deGrasse Tyson here, how can I help?</h6>
+    <div id="faqDiv">
+        <ol>
+            <li>
+                <h5><b>Created a Hero but see them?</b></h5>
+                <p>Currently there are conditions set when it comes to creating a new hero. You cannot create a hero</p>
+                <ol id="inner-ordered-list">
+                    <li>That is already existing in the registry</li>
+                    <li>Who's name has already been taken. Sadly we can't have two Thors existing at the same time as
+                        that will be a <i>shocking</i> sight to behold.
+                    </li>
+                </ol>
+                <p>Changes will be made in order to alert you when a submission has failed next time</p>
+            </li>
+        </ol>
+        <hr>
+        <small class="text-center" id="faqFooter">This page will be updated over time as more questions are
+            asked</small>
+    </div>
+{{/partial}}
+
+{{> layout.hbs}}

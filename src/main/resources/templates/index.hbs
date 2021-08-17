@@ -1,0 +1,70 @@
+{{#partial "navbar"}}
+    <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="/heroes/new">Recruit a New Hero</a></li>
+    <li class="nav-item"><a class="nav-link" href="/squads/new">Create a New Squad</a></li>
+    <li class="nav-item"><a class="nav-link" href="/heroes">All Heroes & Squads</a></li>
+    <li class="nav-item"><a class="nav-link" href="/faqs">FAQs</a></li>
+{{/partial}}
+
+{{#partial "content"}}
+    {{#if uniqueId}}
+        <div id="returning-agent">
+            <h2 class="text-center"><u>Welcome back, {{uniqueId}}</u></h2>
+
+            <h4><b>Here's an overview of your registry</b></h4>
+            <div class="row">
+                <div class="col-md-3"><p>Heroes Registered: {{totalHeroes}}</p></div>
+                <div class="col-md-3"><p>Squads Present: {{totalSquads}}</p></div>
+                <div class="col-md-3"><p>Heroes w/ squads: {{squadfullHeroes}}</p></div>
+                <div class="col-md-3"><p>Heroes without squads: {{squadlessHeroes}}</p></div>
+            </div>
+
+            <div id="newsFeed">
+                <h2 class="text-center"><u>NEWS</u></h2>
+                <h4><b>Gotham News Report</b></h4>
+                <p>We denounce with righteous indignation and dislike men who are so beguiled and demoralized by the
+                    charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and
+                    trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through
+                    weakness of will, which is the same as saying through shrinking from toil and pain. These cases are
+                    perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled
+                    and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed
+                    and every pain avoided. But in certain circumstances and owing to the claims of duty or the
+                    obligations of business it will frequently occur that pleasures have to be repudiated and annoyances
+                    accepted. The wise man therefore always holds in these matters to this principle of selection: he
+                    rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse
+                    pains</p>
+
+                <h4><b>The Night Rises</b></h4>
+                <p>More GCPD push order to keep a better eye on abandoned warehouses and deserted amusement parks. Says
+                    Commissioner Gordon, "We have an alarming number of places that can operate as secret hideouts"</p>
+
+                <h4><b>Anonymous encrypted text. From who though?</b></h4>
+                <p>Dignissim sodales ut eu sem integer vitae. Aliquet enim tortor at auctor. Integer quis auctor elit
+                    sed vulputate mi sit amet mauris. Leo vel fringilla est ullamcorper eget. Varius sit amet mattis
+                    vulputate. Amet risus nullam eget felis eget nunc. Morbi tristique senectus et netus. Dui vivamus
+                    arcu felis bibendum ut. Aliquet nec ullamcorper sit amet risus nullam. Quis enim lobortis
+                    scelerisque fermentum dui faucibus."</p>
+
+                <h4><b>Alfred's Messages</b></h4>
+                <p>Master Bruce, please remember to take a bath!</p>
+                <p>P.S: Your bat suits are in the laundry machine, you might want to avoid fighting crime tonight unless
+                    you choose to wear Robin's outfit</p>
+
+            </div>
+
+        </div>
+    {{else}}
+        <div id="session-form">
+            <h3 class="text-center">New agent detected, please let us know who you are....</h3>
+            <form action="/success" method="post">
+                <label for="uniqueId">Agent Name</label>
+                <input type="text" id="uniqueId" name="uniqueId" class="form-control"
+                       placeholder="How do you want to be referred to as?">
+                <button class="btn btn-outline-secondary">Save</button>
+            </form>
+        </div>
+    {{/if}}
+
+{{/partial}}
+
+{{> layout.hbs}}
