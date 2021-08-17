@@ -6,11 +6,12 @@ Done By Josphat Mwania
 # Hero & Squad Properties
 
 # Hero properties 	Squad properties
-Name	             Name
-Age	                 Cause
-Strength	        Hero Member(s)
-Weakness	
-Affiliated Squad	
+* Name	             * Name
+* Age	                 * Cause
+* Strength	        * Hero Member(s)
+* Weakness	
+* Affiliated Squad	
+
 # Built With
 - Java
 - Gradle
