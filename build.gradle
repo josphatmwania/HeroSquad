@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    is 'application'
+    id 'application'
 }
 
 group 'HeroSquad'
