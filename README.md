@@ -5,12 +5,18 @@ Done By Josphat Mwania
 
 # Hero & Squad Properties
 
-# Hero properties 	Squad properties
-* Name	              Name
-* Age	              Cause
-* Strength	          Hero Member(s)
+# Hero properties 	
+* Name	              
+* Age	              
+* Strength	          
 * Weakness	
 * Affiliated Squad	
+
+# Squad properties
+* Name
+* Cause
+* Hero Member(s)
+
 
 # Built With
 - Java
