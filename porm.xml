@@ -16,6 +16,11 @@
             <version>2.2</version>
         </dependency>
         <dependency>
+            <groupId>com.sparkjava</groupId>
+            <artifactId>spark-template-handlebars</artifactId>
+            <version>2.5.5</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity</artifactId>
             <version>1.7</version>
@@ -29,6 +34,12 @@
             <groupId>org.sql2o</groupId>
             <artifactId>sql2o</artifactId>
             <version>1.5.4</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <build>
@@ -67,11 +78,11 @@
             <plugin>
                 <groupId>com.heroku.sdk</groupId>
                 <artifactId>heroku-maven-plugin</artifactId>
-                <version>0.4.4</version>
+                <version>3.0.3</version>
                 <configuration>
                     <jdkVersion>1.8</jdkVersion>
                     <!-- Change this to YOUR application name! -->
-                    <appName>name-of-app</appName>
+                    <appName>hero-squad-josphat</appName>
                     <processTypes>
                         <web>java -jar target/my-app-1.0-jar-with-dependencies.jar</web>
                     </processTypes>

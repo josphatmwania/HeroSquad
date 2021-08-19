@@ -10,9 +10,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 @SuppressWarnings("unused")
 public class App {
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+    }
     public static void main(String[] args) {
+        port(getHerokuAssignedPort());
         staticFileLocation("/public");
 
         ProcessBuilder process = new ProcessBuilder();
@@ -92,6 +101,7 @@ public class App {
         post("/squads/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             List<Hero> squadlessHeroes = new ArrayList<>();
+            List<Squad> squad = new ArrayList<>();
             for (Hero hero : Hero.getHeroRegistry()) {
                 if (hero.getSquadAlliance().equals("")) {
                     squadlessHeroes.add(hero);
@@ -101,15 +111,17 @@ public class App {
             String name = request.queryParams("name");
             String cause = request.queryParams("cause");
             String heroName = request.queryParams("founder");
-            Hero squadFounder = null;
+            Hero squadFounder = new Hero(name, 0, "", "");
             for (Hero hero : squadlessHeroes) {
                 if (hero.getName().equalsIgnoreCase(heroName)) {
                     squadFounder = hero;
                     break;
                 }
             }
-            assert squadFounder != null;
+//            assert squadFounder != null;
             Squad newSquad = new Squad(name, cause, squadFounder);
+            squad.add(newSquad);
+            squadlessHeroes.add(squadFounder);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
