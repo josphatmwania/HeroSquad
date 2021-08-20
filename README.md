@@ -23,7 +23,7 @@ Hero Squad is a java web application that allows users to interact with it to cr
 - Gradle
 - Spark
 - Junit
-- HTML + Handlebars/Moustache
+- HTML + Handlebars     
 - CSS
 
 # Prerequisites
@@ -45,10 +45,10 @@ Clone the repository into a desired folder by running the following link in your
 
 
 # Live Link
-Live  (https://hero-squad-josphat237.herokuapp.com/) link
+Live [link](https://hero-squad-josphat237.herokuapp.com/) 
 
 # Known Bugs
 There are no 7known bugs at the moment.
 # License
-MIT (LICENSE)
+MIT  [LICENSE](LICENSE)
 

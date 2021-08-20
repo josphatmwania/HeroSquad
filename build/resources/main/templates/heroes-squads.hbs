@@ -1,0 +1,33 @@
+{{#partial "navbar"}}
+    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="/heroes/new">Recruit a New Hero</a></li>
+    <li class="nav-item"><a class="nav-link" href="/squads/new">Create a New Squad</a></li>
+    <li class="nav-item"><a class="nav-link" href="/heroes">All Heroes & Squads</a></li>
+    <li class="nav-item active"><a class="nav-link" href="/faqs">FAQs</a></li>
+{{/partial}}
+
+{{#partial "content"}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>All Heroes</h1>
+                <!-- HEROES -->
+                {{#each allHeroes}}
+                    <p>Hero: </p>{{name}}
+                {{/each}}
+            </div>
+            <div class="col-md-6">
+                <h1>All Squads</h1>
+                <!-- SQUADS -->
+                {{#each allSquads}}
+                    <p>Squad: </p>{{name}}
+                    <p>Cause: </p>{{cause}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
+
+{{/partial}}
+
+{{> layout.hbs}}
