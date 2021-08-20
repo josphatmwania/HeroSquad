@@ -45,7 +45,7 @@ Clone the repository into a desired folder by running the following link in your
 
 
 # Live Link
-Live link (https://hero-squad-josphat237.herokuapp.com/)
+Live  (https://hero-squad-josphat237.herokuapp.com/) link
 
 # Known Bugs
 There are no 7known bugs at the moment.
