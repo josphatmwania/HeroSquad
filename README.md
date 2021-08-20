@@ -51,7 +51,7 @@ Live [link](https://hero-squad-josphat237.herokuapp.com/)
 # Known Bugs
 There are no known bugs at the moment.
 
-#Support and contact details
+# Support and contact details
 Email: josphatmwania237@gmail.com
 # License
 MIT  [LICENSE](LICENSE) Josphat Mwania 2021
