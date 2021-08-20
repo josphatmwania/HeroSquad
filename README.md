@@ -36,10 +36,11 @@ Hero Squad is a java web application that allows users to interact with it to cr
 
 
 # Setup Guide
-Run java --version to check which version of java you have installed in your device. If you have java installed, you should see an output slightly similar to the one below...
-openjdk 10.0.2 2018-07-17
-OpenJDK Runtime Environment (build 10.0.2+13-Ubuntu-1ubuntu0.18.04.4)
-... then you need to install java by running this : sudo apt install default-jre
+- Run java --version to check which version of java you have installed in your device. 
+- If you have java installed, you should see an output slightly similar to the one below...
+- openjdk 10.0.2 2018-07-17
+- OpenJDK Runtime Environment (build 10.0.2+13-Ubuntu-1ubuntu0.18.04.4)
+- Then you need to install java by running this: sudo apt install default-jre
 
 Clone the repository into a desired folder by running the following link in your terminal: https://github.com/josphatmwania/HeroSquad.git
 
@@ -48,7 +49,7 @@ Clone the repository into a desired folder by running the following link in your
 Live [link](https://hero-squad-josphat237.herokuapp.com/) 
 
 # Known Bugs
-There are no 7known bugs at the moment.
+There are no known bugs at the moment.
 # License
 MIT  [LICENSE](LICENSE)
 
