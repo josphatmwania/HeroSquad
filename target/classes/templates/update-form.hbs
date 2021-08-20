@@ -1,0 +1,55 @@
+{{#partial "navbar"}}
+    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="/heroes/new">Recruit a New Hero</a></li>
+    <li class="nav-item"><a class="nav-link" href="/squads/new">Create a New Squad</a></li>
+    <li class="nav-item"><a class="nav-link" href="/heroes">All Heroes & Squads</a></li>
+    <li class="nav-item"><a class="nav-link" href="/faqs">FAQs</a></li>
+{{/partial}}
+
+
+{{#partial "content"}}
+    {{#if members}}
+        <form action="/squads/{{squad.squadId}}/remove" method="post">
+            <h3 class="text-center"><u>Who will you remove?</u></h3>
+            <p class="text-center">Time to say goodbye</p>
+            <div class="form-group">
+                <label for="removeHero">Remove Hero</label>
+                <select class="form-control" id="removeHero" name="removeHero">
+                    {{#if members}}
+                        {{#each members}}
+                            <option>{{name}}</option>
+                        {{/each}}
+                    {{else}}
+                        <option>No more heroes available</option>
+                    {{/if}}
+                </select>
+            </div>
+            {{#if members}}
+                <button type="submit" class="btn btn-outline-danger">Save</button>
+            {{/if}}
+        </form>
+    {{else}}
+        <form action="/squads/{{squad.squadId}}/update" method="post">
+            <h3 class="text-center"><u>Want to add more here?</u></h3>
+            <p class="text-center">Remember the limit is 3 heroes per squad</p>
+            <div class="form-group">
+                <label for="addHero">Add Hero</label>
+                <select class="form-control" id="addHero" name="addHero">
+                    {{#if nonMembers}}
+                        {{#each nonMembers}}
+                            <option>{{name}}</option>
+                        {{/each}}
+                    {{else}}
+                        <option>No more heroes available</option>
+                    {{/if}}
+                </select>
+            </div>
+            {{#if nonMembers}}
+                <button type="submit" class="btn btn-outline-primary">Save</button>
+            {{/if}}
+        </form>
+    {{/if}}
+
+
+{{/partial}}
+{{> layout.hbs}}
