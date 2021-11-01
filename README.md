@@ -26,7 +26,7 @@ Hero Squad is a java web application that allows users to interact with it to cr
 - HTML + Handlebars     
 - CSS
 
-# Prerequisites
+# Project prerequisites
 ~ These are the Prerequisites
 - Java JDK
 - Java IDE
