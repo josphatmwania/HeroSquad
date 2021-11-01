@@ -68,7 +68,8 @@ public class App {
 
         //get: create hero page
         get("/heroes/new", (request, response) -> {
-            Map<String, Object> model = new HashMap<>();
+            Map<String, Object> model = new HashMap<>();clear
+
             model.put("uniqueId", request.session().attribute("uniqueId"));
             return new ModelAndView(model, "hero-form.hbs");
         }, new HandlebarsTemplateEngine());
